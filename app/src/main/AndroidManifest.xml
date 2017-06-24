@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.edu.zhaoyang.easyrentcar">
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <!--用于访问网络-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 允许程序设置内置sd卡的写权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--获取运营商信息，用于支持提供运营商信息相关的接口-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--用于访问wifi网络信息，wifi信息会用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!--这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!--用于读取手机当前的状态-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 允许程序访问CellID或WiFi热点来获取粗略的位置 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!--用于访问GPS定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+
+    <application
+        android:name=".application.MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/easy_rent_car"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="294e22f1150d454d7bcc04e584efa94a" />
+
+        <service android:name="com.amap.api.location.APSService" />
+
+        <activity
+            android:name=".activities.MainActivity"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.RentCar" />
+        <activity android:name=".activities.ReserveSuccess" />
+        <activity android:name=".activities.ConnectSuccess" />
+        <activity android:name=".activities.Pay" />
+        <activity android:name=".activities.PaySuccess" />
+        <activity android:name=".activities.Login" />
+        <activity android:name=".activities.Register" />
+        <activity android:name=".activities.MyOrder" />
+        <activity android:name=".activities.MyInformation" />
+        <activity android:name=".activities.MyOrderDetails" />
+        <activity android:name=".activities.About" />
+        <activity android:name=".activities.UserGuide" />
+        <activity android:name=".activities.MyWallet" />
+        <activity android:name=".activities.RechargeSuccess" />
+        <activity android:name=".activities.Setting"></activity>
+    </application>
+
+</manifest>
